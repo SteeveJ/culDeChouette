@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--Created using XmlSitemapGenerator.org - Free HTML, RSS and XML sitemap generator-->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>http://culdechouette.jerent-steeve.com/</loc>
+    <changefreq>Daily</changefreq>
+    <image:image>
+      <image:loc>http://culdechouette.jerent-steeve.com/src/img/assets/parchemin.png</image:loc>
+      <image:title>parchemin</image:title>
+      <image:caption>parchemin</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>http://culdechouette.jerent-steeve.com/src/img/logo/logo_no_bg.png</image:loc>
+      <image:title>Logo</image:title>
+      <image:caption>Logo</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>http://culdechouette.jerent-steeve.com/src/img/assets/characters/karadoc.png</image:loc>
+      <image:title>Joueur 1</image:title>
+      <image:caption>Joueur 1</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>http://culdechouette.jerent-steeve.com/src/img/assets/btn/btn_dice.png</image:loc>
+      <image:title>bouton pour lancer les dés</image:title>
+      <image:caption>bouton pour lancer les dés</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>http://culdechouette.jerent-steeve.com/src/img/assets/btn/btn_owl.png</image:loc>
+      <image:title>bouton pour doubler</image:title>
+      <image:caption>bouton pour doubler</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>http://culdechouette.jerent-steeve.com/src/img/assets/rubans/bg_score.png</image:loc>
+      <image:title>rubans</image:title>
+      <image:caption>rubans</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>http://culdechouette.jerent-steeve.com/src/img/assets/rubans/bg_lancer.png</image:loc>
+      <image:title>rubans</image:title>
+      <image:caption>rubans</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>http://culdechouette.jerent-steeve.com/src/img/assets/characters/perceval.png</image:loc>
+      <image:title>Joueur 2</image:title>
+      <image:caption>Joueur 2</image:caption>
+    </image:image>
+  </url>
+</urlset>
+<!--<guid value="1be0311d-4880-4460-bd12-0e0279cbbc18" />-->
+<!--Created using XmlSitemapGenerator.org - Free HTML, RSS and XML sitemap generator-->

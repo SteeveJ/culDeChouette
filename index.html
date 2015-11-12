@@ -1,0 +1,309 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <link rel="icon" type="image/png" href="src/img/logo/favicon.png"/>
+    <!--[if IE]>
+    <link rel="shortcut icon" type="image/x-icon" href="src/img/logo/favicon.png"/><![endif]-->
+    <title>Cul de chouette !</title>
+
+    <meta property="og:url" content="http://culdechouette.jerent-steeve.com">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Cul de Chouette... Le jeu inspiré de Kaamelott">
+    <meta property="og:description"
+          content="Venez jouez au véritable Cul de Chouette, le jeu inspirée de la série télé Kaamelott. Qui arrivera à faire en premier le fameux chiffre ? ">
+    <meta property="og:image" content="http://culdechouette.jerent-steeve.com/img/logo/logo_no_bg.png">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <link rel="stylesheet" href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css"/>
+    <!--<link rel="stylesheet" href="src/css/sbg.css" type="text/css" />-->
+    <link rel="stylesheet" href="src/css/main.css">
+</head>
+
+<body>
+
+<!--<audio id="bg_audio" autoplay>-->
+<!--<source src="audio/bg_music.mp3" type="audio/mpeg">-->
+<!--</audio>-->
+
+<div id="audio">
+    <!-- JQuery loads audio elements here-->
+</div>
+
+<div id="audio_voices">
+    <!-- JQuery charge les paroles de Kaamelott ici -->
+</div>
+<div id="audio-culDeChouette">
+
+</div>
+<div id="audio-win">
+
+</div>
+
+<div id="audio-loose">
+
+</div>
+
+<div id="audio-double">
+
+</div>
+
+<section id="content" class="row">
+
+    <!-- Modal règles du jeu -->
+    <div class="modal fade" id="modal-rules" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content text-center">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title" id="myModalLabel">Comment jouer ?</h4>
+                </div>
+                <div class="modal-body text-justify">
+                    <p>Jeu en 1 contre 1 en local, le but est d'arriver a un score de 343 ou plus afin de gagner (enfin,
+                        c'est ce qu'on a compris en regardant la serie). Attention tout double qui echoue est
+                        eliminatoire. Serez-vous a la hauteur de notre duo de chevaliers ?
+                        <br>
+                        Lorsque c'est votre tour, vous lancez les des, en cliquant sur le symbole <span><img
+                                src="src/img/assets/btn/btn_dice.png"
+                                alt="bouton pour lancer les dés"/></span>
+                        <br>
+                        Si de votre lancer, resulte un triple (1,1,1 ou 2,2,2 etc), vous realisez un <b>cul de
+                            chouette</b>.
+                        Vous pouvez tenter de doubler votre cul de chouette en cliquant sur la symbole <span><img
+                                src="src/img/assets/btn/btn_owl.png"
+                                alt="bouton pour doubler"/></span>
+                        <br>
+                        Doubler est a vos risques et perils : si vous parvenez a realiser un nouveau un cul de chouette,
+                        vous gagnez les
+                        points, si vous perdez, vous etes le grand perdant du jeu (toujours selon les regles de la
+                        serie). <b>Amusez vous bien !</b></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal victoire -->
+    <div class="modal fade" id="modal-winner" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content text-center">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title text-center" id="myModalLabelJ1">Felicitations !</h4>
+                </div>
+                <div class="modal-body">
+                    <img src="src/img/logo/logo_no_bg.png" alt="Logo" class="modal-logo"/>
+                    <br>
+                    <h5 id="winner"></h5>
+                    <button class="btn rejouer"><img src="src/img/assets/btn/btn_reload.png" alt=""></button>
+                    <br>
+
+                    <div class="fb-share-button" data-href="http://culdechouette.jerent-steeve.com/"
+                         data-layout="button_count"></div>
+                    <br>
+                    <a href="https://twitter.com/share" class="twitter-share-button margin-top"
+                       data-url="http://culdechouette.jerent-steeve.com/" data-via="Cul_de_Chouette">Tweet</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Modal victoire -->
+    <div class="modal fade" id="modal-analytics" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+        <div class="modal-dialog modal-lg" role="document">
+            <div class="modal-content text-center">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                            aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title text-center" id="myModalLabelAnalytics">Analytics</h4>
+                </div>
+                <div class="modal-body">
+                    <div id="widgetIframe">
+                        <iframe width="100%" height="350"
+                                src="http://www.jerent-steeve.com/piwik/piwik/index.php?module=Widgetize&action=iframe&widget=1&moduleToWidgetize=Actions&actionToWidgetize=getPageUrls&idSite=2&period=month&date=2015-11-10&disableLink=1&widget=1"
+                                scrolling="no" frameborder="0" marginheight="0" marginwidth="0"></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="container-fluid">
+
+        <header>
+
+            <nav id="nav" class="navbar navbar-default">
+                <div class="container">
+                    <!-- Brand and toggle get grouped for better mobile display -->
+                    <div class="navbar-header">
+                        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                                data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
+                            <span class="sr-only">Toggle navigation</span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                            <span class="icon-bar"></span>
+                        </button>
+                        <a class="navbar-brand" href="#"><img src="src/img/logo/logo_no_bg.png" alt="Logo"
+                                                              class="navbar-logo"/></a>
+                    </div>
+
+                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                        <ul class="nav navbar-nav">
+                            <li><a href="#" data-toggle="modal" data-target="#modal-rules">Comment jouer ? <span
+                                    class="sr-only">(current)</span></a></li>
+                            <li><a href="#" data-toggle="modal" data-target="#modal-analytics">Analytics</a></li>
+                        </ul>
+                    </div>
+                    <!-- /.navbar-collapse -->
+                </div>
+                <!-- /.container-fluid -->
+            </nav>
+        </header>
+
+        <div id="container" class="col-md-12 container">
+
+            <div class="title text-center">
+                <!--<h1>cul de chouette</h1>-->
+            </div>
+
+            <div id="player-1" class="player col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center">
+                <div id="img-joueur-1" class="img-joueur">
+                    <img src="src/img/assets/characters/karadoc.png" alt="Joueur 1"
+                         class="img-responsive"/>
+                </div>
+                <button class="btn btn-default" id="lancej1"><img src="src/img/assets/btn/btn_dice.png"
+                                                                  alt="bouton pour lancer les dés"
+                                                                  class="img-responsive"/></button>
+                <button class="btn btn-default disabled" id="doublerj1"><img src="src/img/assets/btn/btn_owl.png"
+                                                                             alt="bouton pour doubler"
+                                                                             class="img-responsive"/></button>
+                <div>
+                    <div class="score-joueurs-img">
+                        <img src="src/img/assets/rubans/bg_score.png" alt="rubans"/>
+                    </div>
+                    <div id="score-joueur-1" class="score-joueurs text-center">
+                        Score : 0
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 text-center">
+                <!--tapis de jeu-->
+
+                <div id="line">
+                    <div id="lines" class="text-center "></div>
+                </div>
+
+                <div id="display-dice">
+                    <img src="src/img/dice/1.jpg" alt="" id="dice-1"/>
+                    <img src="src/img/dice/1.jpg" alt="" id="dice-2"/>
+                    <img src="src/img/dice/1.jpg" alt="" id="dice-3"/>
+                </div>
+                <div>
+                    <div class="lancer-img">
+                        <img src="src/img/assets/rubans/bg_lancer.png" alt="rubans"/>
+                    </div>
+                    <div id="result" class="result text-center">
+
+                    </div>
+                </div>
+            </div>
+
+            <div id="player-2" class="player col-lg-3 col-md-3 col-sm-3 col-xs-3 text-center">
+                <div id="img-joueur-2" class="img-joueur">
+                    <img src="src/img/assets/characters/perceval.png" alt="Joueur 2"
+                         class="img-responsive"/>
+                </div>
+                <!--<button class="btn btn-default" id="lancej2">Lancer les dés</button>-->
+                <button class="btn btn-default" id="lancej2"><img src="src/img/assets/btn/btn_dice.png"
+                                                                  alt="bouton pour lancer les dés"
+                                                                  class="img-responsive"/></button>
+                <button class="btn btn-default disabled" id="doublerj2"><img src="src/img/assets/btn/btn_owl.png"
+                                                                             alt="bouton pour doubler"
+                                                                             class="img-responsive"/></button>
+                <div>
+                    <div class="score-joueurs-img">
+                        <img src="src/img/assets/rubans/bg_score.png" alt="rubans"/>
+                    </div>
+                    <div id="score-joueur-2" class="score-joueurs text-center">
+                        Score : 0
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+<section class="socialshare text-center">
+    <div class="fb-share-button" data-href="http://culdechouette.jerent-steeve.com/"
+         data-layout="button_count"></div>
+    <br>
+    <a href="https://twitter.com/share" class="twitter-share-button margin-top"
+       data-url="http://culdechouette.jerent-steeve.com/" data-via="Cul_de_Chouette">Tweet</a>
+</section>
+
+<footer class="container-fluid text-center">
+
+    <p>Cul de Chouette © Alexandre Astier – Site à but non lucratif - Novembre 2015. <br>
+        Projet réalisé dans le cadre des Buzzie Award, iim 2015. <br>
+        Projet mené et réalisé par : Antoine de Foucaud – Louis Fourel – Marion Gozin - Steeve Jerent.</p>
+
+</footer>
+
+
+<script>!function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0], p = /^http:/.test(d.location) ? 'http' : 'https';
+    if (!d.getElementById(id)) {
+        js = d.createElement(s)
+        js.id = id;
+        js.src = p + '://platform.twitter.com/widgets.js';
+        fjs.parentNode.insertBefore(js, fjs);
+    }
+}(document, 'script', 'twitter-wjs');</script>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+<script src="src/js/sound.js"></script>
+<script src="src/js/main.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js"></script>
+
+<div id="fb-root"></div>
+<script>
+    $(window).load(function () {
+        $('#modal-rules').modal('show');
+    });
+</script>
+<script>(function (d, s, id) {
+    var js, fjs = d.getElementsByTagName(s)[0];
+    if (d.getElementById(id)) return;
+    js = d.createElement(s);
+    js.id = id;
+    js.src = "//connect.facebook.net/fr_FR/sdk.js#xfbml=1&version=v2.5&appId=517025991792976";
+    fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+
+<!-- Piwik -->
+<script type="text/javascript">
+    var _paq = _paq || [];
+    _paq.push(['trackPageView']);
+    _paq.push(['enableLinkTracking']);
+    (function () {
+        var u = "//www.jerent-steeve.com/piwik/piwik/";
+        _paq.push(['setTrackerUrl', u + 'piwik.php']);
+        _paq.push(['setSiteId', 2]);
+        var d = document, g = d.createElement('script'), s = d.getElementsByTagName('script')[0];
+        g.type = 'text/javascript';
+        g.async = true;
+        g.defer = true;
+        g.src = u + 'piwik.js';
+        s.parentNode.insertBefore(g, s);
+    })();
+</script>
+<noscript><p><img src="//www.jerent-steeve.com/piwik/piwik/piwik.php?idsite=2" style="border:0;" alt=""/></p></noscript>
+<!-- End Piwik Code -->
+</body>
+</html>
